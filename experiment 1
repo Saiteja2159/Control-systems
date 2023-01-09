@@ -1,68 +1,80 @@
+1)  **************𝐏𝐀𝐑𝐓 𝟏*****************
 G1=1/s+2 and G2=4/s
-
-
-
 Startup execution:
   loading initial environment
-
 --> clc;
-
 --> clear;
-
 --> s=%s;
-
 --> G1=syslin('c',1,s+2);
-
 --> G2=syslin('c',4,s);
-
 --> T1=G1*G2;
-
 --> disp(T1,"The series transfer function of T1 = ");
-
- The series transfer function of T1 = 
-
-
-            
+ The series transfer function of T1 =            
      4      
    -------  
          2  
    2s + s   
-
-
 --> T2=G1+G2;
-
 --> disp(T2,"The parallel transfer function of T2 = ");
-
- The parallel transfer function of T2 = 
-
-
-            
+ The parallel transfer function of T2 =            
    8 + 5s   
    -------  
          2  
    2s + s   
-
-
 --> T3=G1/(1+G1*G2);
-
 --> disp(T3, "The positive feedback transfer function of T3 =");
-
  The positive feedback transfer function of T3 =               
        s        
    -----------  
              2  
    4 + 2s + s   
-
-
 --> T4=G1/(1-G1*G2);
-
 --> disp(T4,"The negative feedback transfer function of T4 =")
-
  The negative feedback transfer function of T4 =
-
-
-                 
-        s        
+         s        
    ------------  
               2  
    -4 + 2s + s   
+
+
+2) *******************𝐏𝐀𝐑𝐓 𝟐********************
+clc
+--> clear
+--> H=syslin("d",[45.76+6*%s+2*%s^2],[23.28+3.1*%s+%s^2+3.796*%s^3])
+ H  = 
+
+                       2       
+        45.76 + 6z + 2z        
+   --------------------------  
+                   2        3  
+   23.28 + 3.1z + z + 3.796z   
+--> disp(H,'The given transfer function H = ')
+ The given transfer function H = 
+                       2       
+        45.76 + 6z + 2z        
+   --------------------------  
+                   2        3  
+   23.28 + 3.1z + z + 3.796z   
+--> [Z,P,K]=tf2zp(H)
+ K  = 
+   0.5268704
+ P  = 
+  -1.7664798  
+   0.7515223 + 1.7049813i
+   0.7515223 - 1.7049813i
+ Z  = 
+  -1.5 + 4.542026i
+  -1.5 - 4.542026i
+--> disp(Z, 'The obtained zeros for the given transfer function Z= ')
+ The obtained zeros for the given transfer function Z= 
+  -1.5 + 4.542026i
+  -1.5 - 4.542026i
+--> disp(P,'The obtained poles for the given transfer function P=');
+ The obtained poles for the given transfer function P=
+  -1.7664798  
+   0.7515223 + 1.7049813i
+   0.7515223 - 1.7049813i
+--> disp(K,'The obtained system gain forb the given transfer function K = ');
+ The obtained system gain forb the given transfer function K = 
+   0.5268704
+
