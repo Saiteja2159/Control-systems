@@ -1,0 +1,38 @@
+clc;clear;
+
+--> Z=[2;1];P=[0;-3-%i;-3+%i];K=2.5;
+
+--> disp(Z,'Enter the zeros Z = ')
+
+ Enter the zeros Z = 
+
+
+   2.
+   1.
+
+
+--> disp(P,'Enter the poles P = ')
+
+ Enter the poles P = 
+
+
+   0.  
+  -3. - i
+  -3. + i  
+
+
+--> disp(K,'Enter the system gain K = ')
+
+ Enter the system gain K = 
+
+
+   2.5
+
+
+--> S=Zp2tf(Z,P,K,"c")
+
+Undefined variable: Zp2tf
+
+--> roots(S.num)
+
+Undefined variable: S
