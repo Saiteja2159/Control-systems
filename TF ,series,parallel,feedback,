@@ -1,0 +1,68 @@
+G1=1/s+2 and G2=4/s
+
+
+
+Startup execution:
+  loading initial environment
+
+--> clc;
+
+--> clear;
+
+--> s=%s;
+
+--> G1=syslin('c',1,s+2);
+
+--> G2=syslin('c',4,s);
+
+--> T1=G1*G2;
+
+--> disp(T1,"The series transfer function of T1 = ");
+
+ The series transfer function of T1 = 
+
+
+            
+     4      
+   -------  
+         2  
+   2s + s   
+
+
+--> T2=G1+G2;
+
+--> disp(T2,"The parallel transfer function of T2 = ");
+
+ The parallel transfer function of T2 = 
+
+
+            
+   8 + 5s   
+   -------  
+         2  
+   2s + s   
+
+
+--> T3=G1/(1+G1*G2);
+
+--> disp(T3, "The positive feedback transfer function of T3 =");
+
+ The positive feedback transfer function of T3 =               
+       s        
+   -----------  
+             2  
+   4 + 2s + s   
+
+
+--> T4=G1/(1-G1*G2);
+
+--> disp(T4,"The negative feedback transfer function of T4 =")
+
+ The negative feedback transfer function of T4 =
+
+
+                 
+        s        
+   ------------  
+              2  
+   -4 + 2s + s   
