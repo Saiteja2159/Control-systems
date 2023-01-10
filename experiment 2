@@ -1,38 +1,67 @@
+********************𝐩𝐚𝐫𝐭1**************************
+
 clc;clear;
-
 --> Z=[2;1];P=[0;-3-%i;-3+%i];K=2.5;
-
 --> disp(Z,'Enter the zeros Z = ')
-
  Enter the zeros Z = 
-
-
    2.
    1.
-
-
 --> disp(P,'Enter the poles P = ')
-
  Enter the poles P = 
-
-
    0.  
   -3. - i
   -3. + i  
-
-
 --> disp(K,'Enter the system gain K = ')
-
  Enter the system gain K = 
-
-
    2.5
-
-
 --> S=Zp2tf(Z,P,K,"c")
-
 Undefined variable: Zp2tf
-
 --> roots(S.num)
-
 Undefined variable: S
+
+
+
+
+ *******************𝐏𝐀𝐑𝐓 𝟐********************
+ᘖ)
+clc
+--> clear
+--> H=syslin("d",[45.76+6*%s+2*%s^2],[23.28+3.1*%s+%s^2+3.796*%s^3])
+ H  = 
+
+                       2       
+        45.76 + 6z + 2z        
+   --------------------------  
+                   2        3  
+   23.28 + 3.1z + z + 3.796z   
+--> disp(H,'The given transfer function H = ')
+ The given transfer function H = 
+                       2       
+        45.76 + 6z + 2z        
+   --------------------------  
+                   2        3  
+   23.28 + 3.1z + z + 3.796z   
+--> [Z,P,K]=tf2zp(H)
+ K  = 
+   0.5268704
+ P  = 
+  -1.7664798  
+   0.7515223 + 1.7049813i
+   0.7515223 - 1.7049813i
+ Z  = 
+  -1.5 + 4.542026i
+  -1.5 - 4.542026i
+--> disp(Z, 'The obtained zeros for the given transfer function Z= ')
+ The obtained zeros for the given transfer function Z= 
+  -1.5 + 4.542026i
+  -1.5 - 4.542026i
+--> disp(P,'The obtained poles for the given transfer function P=');
+ The obtained poles for the given transfer function P=
+  -1.7664798  
+   0.7515223 + 1.7049813i
+   0.7515223 - 1.7049813i
+--> disp(K,'The obtained system gain forb the given transfer function K = ');
+ The obtained system gain forb the given transfer function K = 
+   0.5268704
+
+
