@@ -12,7 +12,7 @@ pi=%pi;
 Eq=(s*pi)^2-log(1/Mp)^2*(1-s^2);
 disp(Eq, 'The obtained equation')
 
-x=roots(Eq);
+x=roots(Eq);                                                                                
 disp(x,'x=')
 
 zeta=abs(x(1));
@@ -44,3 +44,32 @@ disp(ts_2percent, 'Settling time for 2% error=')
 
 ts_5percent=3/sigma;
 disp(ts_5percent, 'Settling time for 5% error=')
+
+*********************************OUTPUT**********************************************
+The obtained equation   
+                          2  
+  - 2.5902904 + 12.459895s   
+ x=   
+  - 0.4559498  
+    0.4559498  
+ zeta=   
+    0.4559498  
+ damped frequency wd=   
+    3.1415927  
+ natural frequency wn=   
+    3.5298576  
+ K=   
+    12.459895  
+ Kh=   
+    0.1780814  
+ sigma=   
+    1.6094379  
+ Beta =   
+    1.0973572  
+ Rise time tr=   
+    0.6507004  
+ Settling time for 2% error=   
+    2.4853397  
+ Settling time for 5% error=   
+    1.8640048  
+
