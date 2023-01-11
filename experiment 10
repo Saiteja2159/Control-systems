@@ -1,0 +1,29 @@
+function root1(G, box, text)
+evans(G);
+xgrid();
+a=gca();
+if box~=0 then
+a.box="on";
+a.data_bounds=box;
+end
+a.children(1).visible='off';//remove the legend block
+xtitle(text);
+endfunction//save the code as root1.sce
+
+
+Main program:
+//Root locus
+clear;
+clc;
+xdel(winsid());
+
+//cd"your directory"
+cd"C:\Users\admin\Documents"
+exec("root1.sce");
+
+s=%s;
+G=syslin('c',1,s*(s+1)*(s^2+4*s+13));
+disp(G, 'The given transfer function G(s)=');
+root1(G,[-6 -5;6 5],'Root locus plot for the given transfer function G(s)=1/s(s+1)(s^2+4s+13)');
+//simply write the transfer function and choose
+//suitable range [xmin ymin:xmax ymax]
